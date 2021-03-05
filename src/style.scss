@@ -1,27 +1,118 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css?family=Karla:weight@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css?family=B612:weight@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:weight@600;700&display=swap');
 
 $font-karla: "Karla", sans-serif;
-$font-b612: "B612", sans-serif;
+$font-barcode: 'Libre Barcode 39 Text', cursive;
+$font-nunito: "Nunito", sans-serif;
 $primary-color: #3e6f9e;
 
 body {
   font-family: $font-karla;
-  background-color: #eee;
+  background: url("./img/absurdity.png") repeat;
+  background-color: #f7f7f7;
 
     .logo { 
-        font-family: $font-b612 !important;
+        font-family: $font-barcode !important;
         font-weight: 700;
-        font-size: 3.4rem;
+        font-size: 2.8rem;
         text-decoration: none;
     }
-    .github { 
+    .github {
+        font-family: $font-nunito; 
         text-decoration: none; 
         color: #2c2c2c;
+        opacity: 0.5;
+        transition: opacity 1s;
     }
+
+    .github:hover { opacity: 1; }
+
+    h1 { color: $primary-color; }
 
     .main-wrapper {
         max-width: 860px;
+    
+        .list-container {
+            background-color: #eee;
+            box-shadow: 1px 1px 10px 0px rgba($color: #1a1930, $alpha: 0.2);
+            border: 1px solid #cfcfcf;
+            border-radius: 5px;
+
+            .list-header {
+                border-bottom: 1px solid #dadada;
+
+                a {
+                    font-size: 1.32rem;
+                    color: $primary-color;
+                    opacity: 0.5;
+                    transition: opacity 1.2s;
+                }
+
+                a:hover {
+                    opacity: 1;
+                }
+
+                .active {
+                    color: red !important;
+                }
+            }
+
+            .file-mode { flex-direction: row; }
+            .list-mode { flex-direction: column; }
+
+            .list-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: stretch;
+                list-style: none;
+
+                li {
+                    position: relative;
+                    flex: 1 1 auto !important;
+                    margin: 0.24rem;
+                    padding: 1.25rem;
+                    background-color: #fdfdfd;
+                    border: 2px solid #90aae280;
+                    border-radius: 5px;
+                    text-align: center;
+                    color: #646464;
+                    cursor: pointer;
+                    user-select: none;
+                    transition: border 0.5s;
+
+                    .btn-close {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 0.5rem;
+                    }
+                }
+                
+                li:hover {
+                    background-color: #f2f3f8;
+                    border: 2px solid #ffdc8f;
+                }
+            }
+            
+            .list-tools {
+                li {
+                    a { 
+                        color: #e58a8a;
+                        opacity: 0.8;
+                        transition: opacity 0.5s;
+                    }
+
+                    a:hover {
+                        color: #e76b6b;
+                        opacity: 1;
+                    }
+                    
+                }
+                li:first-child a { color: #a8a8a8; }
+            }
+        }
     }
 }

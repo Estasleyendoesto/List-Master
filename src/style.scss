@@ -43,6 +43,8 @@ body {
             .list-header {
                 border-bottom: 1px solid #dadada;
 
+                a:first-child { width: 53px; }
+
                 a {
                     font-size: 1.32rem;
                     color: $primary-color;
@@ -95,11 +97,18 @@ body {
                     background-color: #f2f3f8;
                     border: 2px solid #ffdc8f;
                 }
+
+                .check { 
+                    text-decoration: line-through;
+                    background-color: #fff2ee; 
+                }
+                .hiden { display: none; }
             }
             
             .list-tools {
                 li {
                     a { 
+                        font-size: 0.92rem;
                         color: #e58a8a;
                         opacity: 0.8;
                         transition: opacity 0.5s;

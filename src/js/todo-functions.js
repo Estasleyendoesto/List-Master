@@ -136,7 +136,8 @@ list_content.addEventListener("mouseover", e => {
     else {
         // Delete cross if cursor out of box
         try {
-            document.querySelector(".btn-close").remove();
+            if ( !e.target.className == ".btn-close" )  // Corección para Navegadores basados en Chrominum
+                document.querySelector(".btn-close").remove();
         }
         catch( err ){}
     }
